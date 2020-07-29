@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="Project_QuickOrder::all"
+                title="Quick Order "
+                translate="title"
+                module="Project_QuickOrder"
+                sortOrder="20"
+                dependsOnModule="Project_QuickOrder"
+                resource="Project_QuickOrder::all"
+        />
+        <add
+                id="Project_QuickOrder::grid_quickorder"
+                title="Quick Order"
+                translate="title"
+                module="Project_QuickOrder"
+                sortOrder="10"
+                parent="Project_QuickOrder::all"
+                action="quickorder/quickorder/listing"
+                resource="Project_QuickOrder::grid_quickorder"
+        />
+        <add
+                id="Project_QuickOrder::grid_status"
+                title="Status"
+                translate="title"
+                module="Project_QuickOrder"
+                sortOrder="10"
+                parent="Project_QuickOrder::all"
+                action="quickorder/status/listing"
+                resource="Project_QuickOrder::grid_status"
+        />
+    </menu>
+</config>
