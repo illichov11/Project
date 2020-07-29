@@ -1,0 +1,57 @@
+<?php
+/* @var $block  Project\QuickOrder\Block\QuickOrder */
+
+$productSku = $block->getProductSku() ? $block->getProductSku() : $block->getData('sku');
+?>
+</br>
+<div class="quickorder-block">
+    <button class="action primary"
+            id="btn-btn-primary-<?= $productSku  ?>"><?php echo $block->escapeHtmlAttr(__('Quick Order'))  ?></button>
+    <div class="content-<?= $productSku ?>">
+        <form id="quickorder-form-<?= $productSku ?>"
+              action="<?php echo $block->getUrl('quickorder/quickorder/quickordercreate/'); ?>"
+              method="post"
+              data-mage-init='{"validation":{}}'>
+            <div class="quickorder-phone-code">
+                <div>
+                    <?php if ($block->getProductSku()): ?>
+                        <input type="hidden" name="sku" value="<?php echo $block->getProductSku() ?>">
+                    <?php elseif ($block->getData('sku')): ?>
+                        <input type="hidden" name="sku" value="<?php echo $block->getData('sku') ?>">
+                    <?php endif; ?>
+                </div>
+                <div id="quickorder-warning" class="warning">
+                </div>
+                <label>Name
+                    <input type="text" name="name" data-validate='{"required":true, "maxlength": 30}'>
+                </label>
+                <label>Phone number
+                    <input type="number" name="phone"
+                           data-validate='{"required":true, "maxlength": 30, "number": true}'>
+                </label>
+                <label>Email
+                    <input type="email" name="email" data-validate="{'maxlength': 50, 'validate-email':true }">
+                </label>
+            </div>
+            <button id="order-button-<?= $productSku ?>" type="submit" class="search-global-action action primary"
+                    title="<?php echo __('Place order now') ?>">
+                <?php echo __('Place order now') ?>
+            </button>
+        </form>
+    </div>
+
+</div>
+<script type="text/x-magento-init">
+               {"*": {
+                      "quickorder": {
+                      "productSku":"<?= $productSku; ?>"
+         }
+      }
+}
+
+
+</script>
+
+
+
+
