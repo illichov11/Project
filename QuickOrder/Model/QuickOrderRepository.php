@@ -10,7 +10,7 @@ use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
 
-use Project\QuickOrder\Api\QuickOrderInterface;
+use Project\QuickOrder\Api\Data\QuickOrderInterface;
 use Project\QuickOrder\Api\QuickOrderRepositoryInterface;
 use Project\QuickOrder\Model\QuickOrderFactory;
 use Project\QuickOrder\Model\ResourceModel\QuickOrder as ResourceModel;

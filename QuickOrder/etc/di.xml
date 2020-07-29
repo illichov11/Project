@@ -2,14 +2,16 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Project\QuickOrder\Api\QuickOrderInterface"
+    <preference for="Project\QuickOrder\Api\Data\QuickOrderInterface"
                 type="Project\QuickOrder\Model\QuickOrder"/>
     <preference for="Project\QuickOrder\Api\QuickOrderRepositoryInterface"
                 type="Project\QuickOrder\Model\QuickOrderRepository"/>
     <preference for="Project\QuickOrder\Api\Data\StatusInterface"
                 type="Project\QuickOrder\Model\Status"/>
-    <preference for="Project\QuickOrder\Api\Repository\StatusRepositoryInterface"
+    <preference for="Project\QuickOrder\Api\StatusRepositoryInterface"
                 type="Project\QuickOrder\Model\StatusRepository"/>
+    <preference for="Project\QuickOrder\Api\Data\QuickOrderSearchResultInterface"
+                type="Magento\Framework\Api\Search\SearchResult"/>
     <preference for="Project\QuickOrder\Api\Data\StatusSearchResultInterface"
                 type="Magento\Framework\Api\Search\SearchResult"/>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
