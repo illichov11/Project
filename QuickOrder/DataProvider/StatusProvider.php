@@ -4,7 +4,6 @@
 namespace Project\QuickOrder\DataProvider;
 
 use Magento\Ui\DataProvider\AbstractDataProvider;
-
 use Project\QuickOrder\Api\Data\StatusInterface;
 use Project\QuickOrder\Model\ResourceModel\Status\CollectionFactory;
 

@@ -6,7 +6,7 @@ namespace Project\QuickOrder\DataProvider;
 use Magento\Ui\DataProvider\ModifierPoolDataProvider;
 use Magento\Framework\App\Request\DataPersistorInterface;
 
-use Project\QuickOrder\Api\QuickOrderInterface;
+use Project\QuickOrder\Api\Data\QuickOrderInterface;
 use Project\QuickOrder\Model\ResourceModel\QuickOrder\Collection;
 use Project\QuickOrder\Model\ResourceModel\QuickOrder\CollectionFactory;
 

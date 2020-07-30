@@ -8,7 +8,8 @@ use Magento\Backend\App\Action\Context;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Psr\Log\LoggerInterface;
-use Sergg\QuickOrder\Api\Repository\QuickOrderRepositoryInterface;
+
+use Project\QuickOrder\Api\QuickOrderRepositoryInterface;
 
 /**
  * Class MassDelete
