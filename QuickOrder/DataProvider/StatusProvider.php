@@ -16,10 +16,9 @@ class StatusProvider extends AbstractDataProvider
     private $collectionFactory;
 
     /**
-     * StatusProvider constructor.
-     * @param $name
-     * @param $primaryFieldName
-     * @param $requestFieldName
+     * @param string $name
+     * @param string $primaryFieldName
+     * @param string $requestFieldName
      * @param CollectionFactory $collectionFactory
      * @param array $meta
      * @param array $data
@@ -58,12 +57,5 @@ class StatusProvider extends AbstractDataProvider
         return $this->loadedData;
     }
 
-    private function getStatusCollection()
-    {
-        if (null === $this->collection) {
-            $this->collection = $this->collectionFactory->create();
-        }
 
-        return $this->collection;
-    }
 }
