@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Project\QuickOrder\Ui\Component\Listing\Column;
+namespace Project\QuickOrder\UI\Component\Listing\Column;
 
 use Magento\Framework\Option\ArrayInterface;
 use Project\QuickOrder\Model\ResourceModel\Status\CollectionFactory;
