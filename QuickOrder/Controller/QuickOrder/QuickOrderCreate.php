@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Project\QuickOrder\Controller\QuickOrder;
-
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
@@ -11,7 +9,7 @@ use Psr\Log\LoggerInterface;
 use Project\QuickOrder\Api\Data\QuickOrderInterfaceFactory;
 use Project\QuickOrder\Api\QuickOrderRepositoryInterface;
 use Project\QuickOrder\Model\Status;
-
+use Project\QuickOrder\Controller\QuickOrder\QuickOrderSuccess;
 class QuickOrderCreate extends Action
 {
     protected $repository;

@@ -11,10 +11,7 @@ use Psr\Log\LoggerInterface;
 
 use Project\QuickOrder\Api\QuickOrderRepositoryInterface;
 
-/**
- * Class MassDelete
- * @package Project\QuickOrder\Controller\Adminhtml\QuickOrder
- */
+
 class MassDelete extends Action
 {
     /** @var QuickOrderRepositoryInterface */

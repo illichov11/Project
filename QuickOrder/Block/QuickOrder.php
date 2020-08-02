@@ -6,10 +6,7 @@ use Magento\Catalog\Model\Product;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\View\Element\Template;
 
-/**
- * Class QuickOrder
- * @package Project\QuickOrder\Block
- */
+
 class QuickOrder extends Template
 {
     /**

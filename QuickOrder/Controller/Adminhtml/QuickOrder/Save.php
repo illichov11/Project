@@ -13,10 +13,6 @@ use Project\QuickOrder\Api\Data\QuickOrderInterfaceFactory;
 use Project\QuickOrder\Api\QuickOrderRepositoryInterface;
 use Project\QuickOrder\Model\QuickOrder;
 
-/**
- * Class Save
- * @package Project\QuickOrder\Controller\Adminhtml\QuickOrder
- */
 class Save extends Action
 {
     /** @var QuickOrderRepositoryInterface */

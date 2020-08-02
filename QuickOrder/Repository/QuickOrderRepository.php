@@ -79,7 +79,7 @@ class QuickOrderRepository implements QuickOrderRepositoryInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria): SearchResultsInterface
     {
-        /** @var \Sergg\QuickOrder\Model\ResourceModel\QuickOrder\Collection $collection */
+        /** @var \Project\QuickOrder\Model\ResourceModel\QuickOrder\Collection $collection */
         $collection = $this->collectionFactory->create();
 
         $this->processor->process($searchCriteria, $collection);

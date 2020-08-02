@@ -13,14 +13,14 @@
                 resource="Project_QuickOrder::all"
         />
         <add
-                id="Project_QuickOrder::grid_quickorder"
+                id="Project_QuickOrder::grid"
                 title="Quick Order"
                 translate="title"
                 module="Project_QuickOrder"
                 sortOrder="10"
                 parent="Project_QuickOrder::all"
                 action="quickorder/quickorder/listing"
-                resource="Project_QuickOrder::grid_quickorder"
+                resource="Project_QuickOrder::grid"
         />
         <add
                 id="Project_QuickOrder::grid_status"

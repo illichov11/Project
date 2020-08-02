@@ -11,10 +11,7 @@ use Project\QuickOrder\Model\ResourceModel\QuickOrder\Collection;
 use Project\QuickOrder\Model\ResourceModel\QuickOrder\CollectionFactory;
 
 
-/**
- * Class QuickOrderProvider
- * @package Project\QuickOrder\DataProvider
- */
+
 class QuickOrderProvider extends ModifierPoolDataProvider
 {
     /**

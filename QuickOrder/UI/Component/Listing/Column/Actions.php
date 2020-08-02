@@ -8,7 +8,7 @@ use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
-class Actions
+class Actions extends Column
 {
     const URL_PATH_EDIT = 'quickorder/quickorder/edit';
     const URL_PATH_DELETE = 'quickorder/quickorder/delete';
