@@ -7,15 +7,16 @@ use Magento\Framework\DB\Ddl\Table;
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
-
+use Magento\Framework\Setup\UpgradeDataInterface;
 use Project\QuickOrder\Api\Schema\StatusSchemaInterface;
 use Project\QuickOrder\Api\Schema\QuickOrderSchemaInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
 
 /**
  * Class InstallSchema
  * @package Project\QuickOrder\Setup
  */
-class InstallSchema implements InstallSchemaInterface
+class UpgradeData implements UpgradeDataInterface
 {
 
     /**
@@ -23,27 +24,27 @@ class InstallSchema implements InstallSchemaInterface
      * @param ModuleContextInterface $context
      * @return void
      */
-    public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
+    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
 
         $this->createQuickOrderTable($setup);
         $this->createStatusTable($setup);
-
-        $setup->getConnection()->addForeignKey(
-            $setup->getFkName(
+        if(version_compare($context->getVersion(), '1.3.1', '<')) {
+            $setup->getConnection()->addForeignKey(
+                $setup->getFkName(
+                    $setup->getTable(QuickOrderSchemaInterface::TABLE_NAME),
+                    QuickOrderSchemaInterface::STATUS_COL_NAME,
+                    $setup->getTable(StatusSchemaInterface::TABLE_NAME),
+                    StatusSchemaInterface::STATUS_CODE_COL_NAME
+                ),
                 $setup->getTable(QuickOrderSchemaInterface::TABLE_NAME),
                 QuickOrderSchemaInterface::STATUS_COL_NAME,
                 $setup->getTable(StatusSchemaInterface::TABLE_NAME),
-                StatusSchemaInterface::STATUS_CODE_COL_NAME
-            ),
-            $setup->getTable(QuickOrderSchemaInterface::TABLE_NAME),
-            QuickOrderSchemaInterface::STATUS_COL_NAME,
-            $setup->getTable(StatusSchemaInterface::TABLE_NAME),
-            StatusSchemaInterface::STATUS_CODE_COL_NAME,
-            Table::ACTION_NO_ACTION
-        );
-
+                StatusSchemaInterface::STATUS_CODE_COL_NAME,
+                Table::ACTION_NO_ACTION
+            );
+        }
         $setup->endSetup();
     }
 
