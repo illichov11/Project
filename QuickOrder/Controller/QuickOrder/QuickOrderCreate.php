@@ -44,7 +44,7 @@ class QuickOrderCreate extends Action
                 $params = $this->getRequest()->getParams();
                 $model = $this->quickorderFactory->create();
                 $defaultStatus = $this->modelStatus->getCollection()->addFieldToFilter('is_default', ['eq' => '1'])->load()->getFirstItem();
-                $statusCode = $defaultStatus->getData('status_code');
+                $statusCode = $defaultStatus->getData('status_id');
                 $model->setData($params);
                 $model->setData('status', $statusCode);
                 $this->repository->save($model);

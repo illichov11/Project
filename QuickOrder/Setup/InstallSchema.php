@@ -11,14 +11,12 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 use Project\QuickOrder\Api\Schema\StatusSchemaInterface;
 use Project\QuickOrder\Api\Schema\QuickOrderSchemaInterface;
 
-/**
- * Class InstallSchema
- * @package Project\QuickOrder\Setup
- */
 class InstallSchema implements InstallSchemaInterface
 {
 
     /**
+     * Installs DB schema for a module
+     *
      * @param SchemaSetupInterface $setup
      * @param ModuleContextInterface $context
      * @return void
@@ -35,12 +33,12 @@ class InstallSchema implements InstallSchemaInterface
                 $setup->getTable(QuickOrderSchemaInterface::TABLE_NAME),
                 QuickOrderSchemaInterface::STATUS_COL_NAME,
                 $setup->getTable(StatusSchemaInterface::TABLE_NAME),
-                StatusSchemaInterface::STATUS_CODE_COL_NAME
+                StatusSchemaInterface::STATUS_ID_COL_NAME
             ),
             $setup->getTable(QuickOrderSchemaInterface::TABLE_NAME),
             QuickOrderSchemaInterface::STATUS_COL_NAME,
             $setup->getTable(StatusSchemaInterface::TABLE_NAME),
-            StatusSchemaInterface::STATUS_CODE_COL_NAME,
+            StatusSchemaInterface::STATUS_ID_COL_NAME,
             Table::ACTION_NO_ACTION
         );
 
@@ -83,8 +81,8 @@ class InstallSchema implements InstallSchemaInterface
             'Name'
         )->addColumn(
             QuickOrderSchemaInterface::STATUS_COL_NAME,
-            Table::TYPE_INTEGER,
-            null,
+            Table::TYPE_TEXT,
+            16,
             ['nullable' => false, 'unsigned'=> true]
         )->addColumn(
             QuickOrderSchemaInterface::CREATED_AT_COL_NAME,
@@ -119,13 +117,13 @@ class InstallSchema implements InstallSchemaInterface
             StatusSchemaInterface::STATUS_ID_COL_NAME,
             Table::TYPE_INTEGER,
             null,
-            ['identity' => true, 'nullable' => false, 'primary' => true, 'unsigned'=> true],
+            ['identity' => true, 'primary' => true, 'nullable' => false],
             'ID'
         )->addColumn(
             StatusSchemaInterface::STATUS_CODE_COL_NAME,
             Table::TYPE_TEXT,
             16,
-            ['nullable' => false],
+            ['nullable' => false, 'unsigned'=> true],
             'Status code'
         )->addColumn(
             StatusSchemaInterface::STATUS_LABEL_COL_NAME,

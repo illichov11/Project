@@ -21,7 +21,7 @@ class ActionsSelect implements ArrayInterface
         $items = $collection->getItems();
         $data = [];
         foreach ($items as $item) {
-            $statusCode = $item->getData('status_code');
+            $statusCode = $item->getData('status_id');
             $label = $item->getData('label');
             $data[] = ['value' => $statusCode, 'label' => __($label)];
 
